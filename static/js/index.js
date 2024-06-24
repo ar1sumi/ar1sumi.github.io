@@ -15,7 +15,7 @@
             default: 'out',
           },
           random: false,
-          speed: 0.2,
+          speed: 0.3,
           straight: true,
         },
         opacity: {
