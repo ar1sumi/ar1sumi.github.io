@@ -7,14 +7,47 @@
     <meta name="description" content="酥米的個人網站" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>み</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/basic@3.4.0/tsparticles.basic.bundle.min.js" defer></script>
+    <script src="static/js/index.js" defer></script>
     <link rel="stylesheet" href="static/css/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body>
-    <div class="view-tile" id="particles"></div>
+    <div class="view-tile absolute left-0 top-0 -z-50" id="particles"></div>
     <div class="view-tile flex items-center justify-center flex-col">
-      <span class="title">尾矢すみ</span>
+      <span class="view-title animate__animated animate__fadeIn animate__slow">尾矢すみ</span>
+      <div class="pt-12 join">
+        <label class="btn btn-outline" for="about-modal">自介</label>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
-    <script src="static/js/index.js"></script>
+    <input type="checkbox" id="about-modal" class="modal-toggle" />
+    <div class="modal" role="dialog">
+      <div class="modal-box">
+        <label class="btn btn-sm btn-circle btn-ghost float-right" for="about-modal">✕</label>
+        <div class="text-4xl font-bold">自介</div>
+        <hr class="my-8" />
+        <div class="text-xl">
+          <p>尾矢すみ, 酥米, 林昕渪</p>
+          <br />
+          <p>Nothing worth noting.</p>
+          <div class="divider"></div>
+          <p class="text-base">
+            <i class="bi-discord mr-1"></i>
+            <span>@stevesepp87</span>
+          </p>
+          <p class="text-base">
+            <i class="bi bi-twitter mr-1"></i>
+            <a class="link link-hover" href="https://x.com/SteveSepp87">@SteveSepp87</a>
+          </p>
+          <p class="text-base">
+            <i class="bi bi-youtube mr-1"></i>
+            <a class="link link-hover" href="https://www.youtube.com/channel/UCHz2cAqLANEEQR3O_6Txs_w">尾矢すみ</a>
+          </p>
+        </div>
+      </div>
+      <label class="modal-backdrop" for="about-modal">Close</label>
+    </div>
   </body>
 </html>

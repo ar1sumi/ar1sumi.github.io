@@ -1,6 +1,5 @@
 (async () => {
-  await loadFull(tsParticles);
-
+  await loadBasic(tsParticles);
   await tsParticles.load({
     id: 'particles',
     options: {
@@ -19,6 +18,7 @@
           straight: true,
         },
         opacity: {
+          fullscreen: false,
           animation: {
             enable: true,
             speed: 1,
