@@ -7,11 +7,13 @@
     <meta name="description" content="酥米的個人網站" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>み</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/basic@3.4.0/tsparticles.basic.bundle.min.js" defer></script>
+    <script src="static/js/initialize.js" defer></script>
     <script src="static/js/index.js" defer></script>
     <link rel="stylesheet" href="static/css/style.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body>
@@ -19,16 +21,16 @@
     <div class="view-tile flex items-center justify-center flex-col">
       <span class="view-title animate__animated animate__fadeIn animate__slow">尾矢すみ</span>
       <div class="pt-12 join">
-        <label class="btn btn-outline" for="about-modal">自介</label>
+        <button class="btn btn-outline join-item" data-dialog-toggle="modal__about">自介</button>
+        <button class="btn btn-outline join-item" data-dialog-toggle="modal__discord">粉絲群</button>
       </div>
     </div>
-    <input type="checkbox" id="about-modal" class="modal-toggle" />
-    <div class="modal" role="dialog">
+    <dialog class="modal" id="modal__about">
       <div class="modal-box">
-        <label class="btn btn-sm btn-circle btn-ghost float-right" for="about-modal">✕</label>
-        <div class="text-4xl font-bold">自介</div>
+        <button class="btn btn-sm btn-circle btn-ghost float-right" data-dialog-toggle="modal__about">✕</button>
+        <div class="text-2xl font-bold">自介</div>
         <hr class="my-8" />
-        <div class="text-xl">
+        <div class="text-base">
           <p>尾矢すみ, 酥米, 林昕渪</p>
           <br />
           <p>Nothing worth noting.</p>
@@ -47,7 +49,34 @@
           </p>
         </div>
       </div>
-      <label class="modal-backdrop" for="about-modal">Close</label>
-    </div>
+      <div class="modal-backdrop" data-dialog-toggle="modal__about"></div>
+    </dialog>
+    <dialog class="modal" id="modal__discord">
+      <div class="modal-box">
+        <button class="btn btn-sm btn-circle btn-ghost float-right" data-dialog-toggle="modal__discord">✕</button>
+        <div class="text-2xl font-bold mb-8">非官方 Gawr Gura Discord 粉絲群</div>
+        <div class="mockup-window bg-base-300 border w-full">
+          <img id="server-banner" />
+          <div class="absolute top-16 px-4 w-full">
+            <div class="text-xl stroke-dark text-ellipsis whitespace-nowrap overflow-hidden" id="server-name"></div>
+          </div>
+          <div class="avatar absolute top-60 px-4 shadow-lg">
+            <div class="w-28 ring ring-info ring-offset-base-100 ring-offset-2 rounded-full">
+              <img id="server-icon" />
+            </div>
+          </div>
+          <div class="text-end pb-4 pt-2 px-2">
+            <div class="stat">
+              <div class="stat-title">成員數</div>
+              <div class="stat-value text-success" id="server-members"></div>
+            </div>
+          </div>
+          <a class="btn btn-primary rounded-none text-lg" href="https://discord.gg/AtlantisCord" target="_blank">
+            <i class="bi-discord"></i>加入伺服器
+          </a>
+        </div>
+      </div>
+      <div class="modal-backdrop" data-dialog-toggle="modal__discord"></div>
+    </dialog>
   </body>
 </html>
