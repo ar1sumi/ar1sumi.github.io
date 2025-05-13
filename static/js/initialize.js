@@ -1,6 +1,6 @@
 document.querySelectorAll('[data-dialog-toggle]').forEach((el) => {
   el.addEventListener('click', (ev) => {
-    const target = document.getElementById(ev.currentTarget.dataset.dialogToggle);
+    const target = document.getElementById(ev.currentTarget.dataset['dialogToggle']);
     if (target !== null && target.tagName === 'DIALOG') {
       if (target.open) {
         target.close();
@@ -10,3 +10,7 @@ document.querySelectorAll('[data-dialog-toggle]').forEach((el) => {
     }
   });
 });
+
+(() => {
+  document.getElementById('copyright-footer').innerText = `© ${new Date().getFullYear()} 尾矢すみ💙`
+})();

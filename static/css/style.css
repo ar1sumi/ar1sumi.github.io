@@ -31,6 +31,16 @@
     @apply text-4xl font-bold;
     @apply md:text-6xl;
   }
+
+  .table {
+    @apply border;
+    @apply border-neutral-400;
+  }
+
+  .table td {
+    @apply border;
+    @apply border-neutral-400;
+  }
 }
 
 @layer utilities {

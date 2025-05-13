@@ -1,7 +1,7 @@
 const updateDiscordServerInfo = async () => {
   const response = await axios.get('https://discord.com/api/v9/invites/AtlantisCord?with_counts=true');
   const bannerUrl = `https://cdn.discordapp.com/banners/${response.data.guild_id}/${response.data.guild.banner}.gif?size=480`;
-  const iconUrl = `https://cdn.discordapp.com/icons/${response.data.guild_id}/${response.data.guild.icon}.gif`;
+  const iconUrl = `https://cdn.discordapp.com/icons/${response.data.guild_id}/${response.data.guild.icon}`;
   document.getElementById('server-name').innerText = response.data.guild.name;
   document.getElementById('server-banner').src = bannerUrl;
   document.getElementById('server-icon').src = iconUrl;
