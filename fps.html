@@ -1,0 +1,184 @@
+<!-- @prettier -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="title" content="尾矢すみ的み" />
+    <meta name="description" content="酥米的個人網站" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>み</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/basic@3.4.0/tsparticles.basic.bundle.min.js" defer></script>
+    <script src="static/js/initialize.min.js" defer></script>
+    <script src="static/js/index.js" defer></script>
+    <link rel="stylesheet" href="static/css/style.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  </head>
+  <body class="flex flex-col">
+    <!-- <div class="view-tile absolute left-0 top-0 -z-50" id="particles"></div> -->
+    <main class="mockup-browser bg-base-300 border container m-auto md:my-16 flex-grow">
+      <div class="mockup-browser-toolbar">
+        <i class="bi bi-arrow-left text-neutral-content pr-2"></i>
+        <i class="bi bi-arrow-clockwise text-neutral-content pr-2"></i>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i></a>
+        <div class="input">FPS歷</div>
+      </div>
+
+      <div class="bg-base-200 flex flex-col justify-center m-auto px-4 pt-16 max-w-screen-lg">
+        <div class="divider text-xl font-semibold">FPS歷程</div>
+        <section class="mb-8">
+          <ul class="timeline timeline-vertical lg:timeline-horizontal justify-center">
+            <li>
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-end timeline-box">CS1.6</div>
+              <hr class="bg-secondary" />
+            </li>
+            <li>
+              <hr class="bg-secondary" />
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-start timeline-box">CSO</div>
+              <hr class="bg-secondary" />
+            </li>
+            <li>
+              <hr class="bg-secondary" />
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-end timeline-box">CS:S</div>
+              <hr class="bg-secondary" />
+            </li>
+            <li>
+              <hr class="bg-secondary" />
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-start timeline-box">CS:GO</div>
+              <hr class="bg-secondary" />
+            </li>
+            <li>
+              <hr class="bg-secondary" />
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-end timeline-box">Apex Legends</div>
+              <hr class="bg-secondary" />
+            </li>
+            <li>
+              <hr class="bg-secondary" />
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-start timeline-box">Valorant</div>
+              <hr class="bg-secondary" />
+            </li>
+            <li>
+              <hr class="bg-secondary" />
+              <div class="timeline-middle">
+                <i class="bi bi-crosshair"></i>
+              </div>
+              <div class="timeline-end timeline-box">CS2</div>
+            </li>
+          </ul>
+        </section>
+
+        <div class="divider text-xl font-semibold">最高牌位</div>
+        <section class="mb-8">
+          <div class="flex justify-center">
+            <div class="stats shadow md:stats-horizontal stats-vertical">
+              <div class="stat">
+                <div class="stat-title">CS2</div>
+                <div class="stat-value" style="color: #bb47c6">21,731</div>
+                <div class="stat-desc">2025</div>
+              </div>
+              <div class="stat">
+                <div class="stat-title">CS:GO</div>
+                <div class="stat-value" style="color: #fade6c">SMFC</div>
+                <div class="stat-desc">2015</div>
+              </div>
+              <div class="stat">
+                <div class="stat-title">Apex</div>
+                <div class="stat-value" style="color: #2bbcff">Diamond II</div>
+                <div class="stat-desc">Season 12 Solo</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider text-xl font-semibold">配備</div>
+        <section>
+          <p class="text-xl font-semibold mb-2"><i class="bi bi-mouse pr-1"></i>Mouse</p>
+          <div class="alert shadow bg-base-100 w-full grid-cols-none">
+            <span>Logitech G PRO X SUPERLIGHT</span>
+          </div>
+
+          <p class="text-xl font-semibold mt-4 mb-2"><i class="bi bi-keyboard pr-1"></i>Keyboard</p>
+          <div class="alert shadow bg-base-100 w-full grid-cols-none">
+            <span>i-rocks K75M (Pink Edition)</span>
+          </div>
+
+          <p class="text-xl font-semibold mt-4 mb-2"><i class="bi bi-display pr-1"></i>Monitor</p>
+          <div class="alert shadow bg-base-100 w-full grid-cols-none">
+            <span>Acer XV272URV</span>
+          </div>
+        </section>
+
+        <div class="divider text-xl font-semibold mt-12">CS2設定</div>
+        <section>
+          <p class="text-xl font-semibold mb-2"><i class="bi bi-mouse pr-1"></i>Mouse Settings</p>
+          <div class="alert bg-base-100 shadow mt-4 w-full grid-cols-none">
+            <div class="grid grid-cols-4 gap-4 w-full">
+              <div>
+                <p class="text-base stat-title">DPI</p>
+                <p class="text-xl stat-value">800</p>
+              </div>
+              <div>
+                <p class="text-base stat-title">Sensitivity</p>
+                <p class="text-xl stat-value">1.25</p>
+              </div>
+              <div>
+                <p class="text-base stat-title">eDPI</p>
+                <p class="text-xl stat-value">1000</p>
+              </div>
+              <div>
+                <p class="text-base stat-title">Hz</p>
+                <p class="text-xl stat-value">1000</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-xl font-semibold mt-4 mb-2"><i class="bi bi-display pr-1"></i>Display Settings</p>
+          <div class="alert bg-base-100 shadow mt-4 w-full grid-cols-none">
+            <div class="grid grid-cols-3 gap-4 w-full">
+              <div>
+                <p class="text-base stat-title">Resolution</p>
+                <p class="text-xl stat-value">1920x1080</p>
+              </div>
+              <div>
+                <p class="text-base stat-title">Aspect Ratio</p>
+                <p class="text-xl stat-value">16:9</p>
+              </div>
+              <div>
+                <p class="text-base stat-title">Hz</p>
+                <p class="text-xl stat-value">170</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-xl font-semibold mt-4 mb-2"><i class="bi bi-crosshair pr-1"></i>Crosshair</p>
+          <div class="alert shadow bg-base-100 w-full grid-cols-none">
+            <code>CSGO-7c543-cMQFR-QER8i-ndst4-szc7L</code>
+          </div>
+        </section>
+        <footer class="footer footer-center mt-12 mb-4">
+          <aside>
+            <p id="copyright-footer"></p>
+          </aside>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

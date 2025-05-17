@@ -19,20 +19,22 @@
   <body>
     <div class="view-tile absolute left-0 top-0 -z-50" id="particles"></div>
     <div class="view-tile flex items-center justify-center flex-col">
-      <span class="view-title animate__animated animate__fadeIn animate__slow">尾矢すみ</span>
-      <div class="pt-12 join">
-        <button class="btn btn-outline join-item" data-dialog-toggle="modal__about">自介</button>
-        <button class="btn btn-outline join-item" data-dialog-toggle="modal__fps">FPS歷</button>
-        <div class="tooltip tooltip-info tooltip-bottom" data-tip="非官方 Gawr Gura Discord 粉絲群">
-          <button class="btn btn-outline join-item" data-dialog-toggle="modal__discord">Discord</button>
+      <div class="flex-grow flex flex-col items-center justify-center">
+        <span class="view-title animate__animated animate__fadeIn animate__slow">尾矢すみ</span>
+        <div class="pt-12 join">
+          <button class="btn btn-outline join-item" data-dialog-toggle="modal__about">自介</button>
+          <button class="btn btn-outline join-item" data-dialog-toggle="modal__songlist">歌單</button>
+          <div class="tooltip tooltip-info tooltip-bottom" data-tip="非官方 Gawr Gura Discord 粉絲群">
+            <button class="btn btn-outline join-item" data-dialog-toggle="modal__discord">Discord</button>
+          </div>
         </div>
       </div>
+      <footer class="footer footer-center">
+        <aside>
+          <p id="copyright-footer"></p>
+        </aside>
+      </footer>
     </div>
-    <footer class="footer footer-center absolute bottom-4">
-      <aside>
-        <p id="copyright-footer"></p>
-      </aside>
-    </footer>
     <dialog class="modal" id="modal__about">
       <div class="modal-box max-w-prose">
         <button class="btn btn-sm btn-circle btn-ghost float-right" data-dialog-toggle="modal__about">✕</button>
@@ -41,9 +43,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2">
           <img src="static/img/shanhai-nobg-flip.webp" />
           <div class="text-base">
-            <p class="font-bold uppercase" style="color: #73C2FB;">Oya Sumi</p>
-            <p class="text-3xl font-bold" style="color: #73C2FB;">尾矢すみ</p>
-            <p style="color: #73C2FB;">酥米、林昕渪</p>
+            <p class="font-bold uppercase" style="color: #73c2fb">Oya Sumi</p>
+            <p class="text-3xl font-bold" style="color: #73c2fb">尾矢すみ</p>
+            <p style="color: #73c2fb">酥米、林昕渪</p>
             <br />
             <p>自由的人</p>
             <p>對 FPS 特別執著</p>
@@ -67,45 +69,30 @@
             </p>
           </div>
         </div>
+        <div class="divider"></div>
+        <ul class="menu bg-base-200 rounded-box w-full">
+          <li><a href="fps.html">FPS歷</a></li>
+        </ul>
       </div>
       <div class="modal-backdrop" data-dialog-toggle="modal__about"></div>
     </dialog>
-    <dialog class="modal" id="modal__fps">
+    <dialog class="modal" id="modal__songlist">
       <div class="modal-box max-w-prose">
-        <button class="btn btn-sm btn-circle btn-ghost float-right" data-dialog-toggle="modal__fps">✕</button>
-        <div class="md:text-2xl text-xl font-bold">FPS 歷</div>
+        <button class="btn btn-sm btn-circle btn-ghost float-right" data-dialog-toggle="modal__songlist">✕</button>
+        <div class="md:text-2xl text-xl font-bold">歌單推薦</div>
         <hr class="my-8" />
-        <div class="text-base">
-          <ul class="list-inside list-disc">
-            <li>CS1.6→CSO→CS:S→CSGO→CS2</li>
-            <li>Apex</li>
-            <li>Valorant</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="text-lg font-semibold">最高牌位</p>
-          <div class="stats shadow md:stats-horizontal stats-vertical">
-            <div class="stat">
-              <div class="stat-title">CS2</div>
-              <div class="stat-value" style="color: #bb47c6;">21,070</div>
-              <div class="stat-desc">2025</div>
-            </div>
-            <div class="stat">
-              <div class="stat-title">CS:GO</div>
-              <div class="stat-value" style="color: #fade6c;">SMFC</div>
-              <div class="stat-desc">2015</div>
-            </div>
-            <div class="stat">
-              <div class="stat-title">Apex</div>
-              <div class="stat-value" style="color: #2bbcff;">Diamond II</div>
-              <div class="stat-desc">Solo</div>
-            </div>
-          </div>
-          <div class="divider"></div>
-          <p>Sensitivity: 1.25, 800 DPI</p>
-          <p>Crosshair: CSGO-7c543-cMQFR-QER8i-ndst4-szc7L</p>
-        </div>
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/4lTKny2Yg8LvbEAYSbeiXi?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
-      <div class="modal-backdrop" data-dialog-toggle="modal__fps"></div>
+      <div class="modal-backdrop" data-dialog-toggle="modal__about"></div>
     </dialog>
     <dialog class="modal" id="modal__discord">
       <div class="modal-box max-w-prose">
@@ -114,7 +101,10 @@
         <div class="mockup-window bg-base-300 border w-full">
           <img id="server-banner" />
           <div class="absolute top-16 px-4 w-full">
-            <div class="md:text-xl text-lg stroke-dark text-ellipsis whitespace-nowrap overflow-hidden" id="server-name"></div>
+            <div
+              class="md:text-xl text-lg stroke-dark text-ellipsis whitespace-nowrap overflow-hidden"
+              id="server-name"
+            ></div>
           </div>
           <div class="avatar relative -top-16 -mb-28 px-4 shadow-lg">
             <div class="w-28 ring ring-info ring-offset-base-100 ring-offset-2 rounded-full">
